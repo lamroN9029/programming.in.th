@@ -1,2 +1,2 @@
 # programming.in.th
-my programming.in.th solution
+my solution for programming.in.th
