@@ -1,0 +1,63 @@
+#include<stdio.h>
+int main(){
+    int tp,ft,lt,bk,rt,bm,temp,n,i,j,cout[6];
+    char t[1001];
+    scanf("%d",&n);
+    for(j=0;j<n;j++){
+        tp=1;
+        ft=2;
+        lt=3;
+        bk=5;
+        rt=4;
+        bm=6;
+        scanf("%s",t);
+        for(i=0;t[i];i++){
+            if(t[i]=='F'){
+                temp=tp;
+                tp=bk;
+                bk=bm;
+                bm=ft;
+                ft=temp;
+            }
+            if(t[i]=='B'){
+                temp=tp;
+                tp=ft;
+                ft=bm;
+                bm=bk;
+                bk=temp;
+            }
+            if(t[i]=='L'){
+                temp=tp;
+                tp=rt;
+                rt=bm;
+                bm=lt;
+                lt=temp;
+            }
+            if(t[i]=='R'){
+                temp=tp;
+                tp=lt;
+                lt=bm;
+                bm=rt;
+                rt=temp;
+            }
+            if(t[i]=='C'){
+                temp=ft;
+                ft=rt;
+                rt=bk;
+                bk=lt;
+                lt=temp;
+            }
+            if(t[i]=='D'){
+                temp=ft;
+                ft=lt;
+                lt=bk;
+                bk=rt;
+                rt=temp;
+            }
+        }
+        cout[j]=ft;
+    }
+        for(i=0;i<n;i++)
+            printf("%d ",cout[i]);
+    return 0;
+}
